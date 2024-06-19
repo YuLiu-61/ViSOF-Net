@@ -24,7 +24,7 @@
 
 <div align="center">
     <a href="./">
-        <img src="./figure/p-rCurve.png" width="50%"/>
+        <img src="./figure/p-rCurve.jpg" width="50%"/>
     </a>
 </div>
 
@@ -34,6 +34,7 @@ This is the official implementation of the paper "[Boosting the Video Surveillan
 
 
 ## 🚀 Updates
+- \[2024.06.19\] Add implemention algorithm of TPR-Transformation.
 - \[2024.05.16\] Fix some bugs, and add some comments.
 - \[2024.05.15\] Release ViSOF-Net.
 
@@ -47,9 +48,8 @@ We propose a novel ViSOF-Net that exhibits state-of-the-art performance. It intr
 ### 🏕️ Comparison with other models
 | Model         | Input Size | Parameters(M) | AP(.5:.0.5:.95) | AP(S) | AP(M) | AP(L) |
 |---------------|:-----------|---------------|-----------------|:------|:------|:------|
-| YOLOv7        | 640        | 37            | 88.3            |<u> 85.1</u>  | 86.2  | 94.1  |
 | YOLOv8        | 640        | 44            | 85.9            | 79.9  | 83.6  | 93.1  |
-| YOLOv9        | 640        | 69            | <u>88.8 </u>           | 83.1  | <u>87.3</u>  | **94.8**  |
+| YOLOv9        | 640        | 69            | <u>88.8 </u>           |<u> 83.1</u>  | <u>87.3</u>  | **94.8**  |
 | RT-DETR       | 640        | 42            | 79.4            | 75.2  | 75.2  | 88.6  |
 | PRB-FPN-MSP   | 640        | 106           | 85.3            | 81.8  | 84.3  | 89.8  |
 | Cascade R-CNN | [800,1333] | 272           | 77.1            | 73    | 75.1  | 83.4  |
@@ -58,13 +58,13 @@ We propose a novel ViSOF-Net that exhibits state-of-the-art performance. It intr
 **Notes:**
 - To get the weights of models in the table：
 
-    Baidu Cloud Link: https://pan.baidu.com/s/1xi4qsk5ILysNitc0SnHOQA 
+    Baidu Cloud Link: https://pan.baidu.com/s/1bkvDSY1mwKcBjNXrJLGA9g
 
-    Code: wbvo
+    Code: f3a4
 
 ### 🌋 Complex Scenarios
 <div align="center">
-  <img src="./figure/ResultCmp.jpeg" width=900 >
+  <img src="./figure/ResultCmp.png" width=900 >
 </div>
 
 ### 🌋 Diversity of Proposed Dataset
@@ -79,12 +79,12 @@ We propose a novel ViSOF-Net that exhibits state-of-the-art performance. It intr
 ### Install
 ```github
 git clone https://github.com/YuLiu-61/ViSOF-Net.git
-cd ViSOF-Net
+cd ViSOF-Net/visof_net
 pip install -r requirements.txt
 ```
 ### Training
 - #### Data preparation
-    1. Download hat dataset images and labels from:
+    * Download hat dataset images and labels from:
 
         Baidu Cloud Link: https://pan.baidu.com/s/1jT4Yyhq2f_86V48gmioW0g 
 
@@ -92,16 +92,10 @@ pip install -r requirements.txt
 
         This dataset includes 12,277 images of 2 classes(hat and person). If training on custom dataset, make sure your dataset structure is YOLO format.
 
-    2. Download yolov7.pt from following link and put it in /weight directory.
-
-        Baidu Cloud Link: https://pan.baidu.com/s/1AXFxbt7Eu8IcHkexPTk2pA 
-
-        Code: bcoo
-
 - #### CFG preparation
-    1. Modify the dataset information in data/coco.yaml.
+    * Modify the dataset information in data/coco.yaml.
 
-    2. Modify cfg/training/yolov7-temporal.yaml, change nc as your dataset’s number of classes.
+    * Modify cfg/training/yolov7-temporal.yaml, change nc as your dataset’s number of classes.
 
 - #### Single GPU training 
     Our model only supports one-batch training now, you can start training as follows:
@@ -143,7 +137,7 @@ pip install -r requirements.txt
 ## Citation
 If you use `ViSOF-Net` in your work, please use the following BibTeX entries:
 ```
-@misc{lv2023detrs,
+@misc{liu2024visof,
       title={Boosting the Video Surveillance Performance via the Fusion of Optical Flow Estimation and Object Detection},
       author={Yu Liu and Suyu Zhang and Shaolong Shu and Feng Lin},
       year={2024},
