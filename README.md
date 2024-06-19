@@ -73,7 +73,7 @@ We propose a novel ViSOF-Net that exhibits state-of-the-art performance. It intr
 </div>
 
 ## 📍 Implementations
-- 🔥 ViSOF-Net in pytorch: [code](./ViSOF-Net), [weights](./Weight)
+- 🔥 ViSOF-Net in pytorch: [code](./visof_net), [weights](./visof_net/weight)
 
 
 ### Install
