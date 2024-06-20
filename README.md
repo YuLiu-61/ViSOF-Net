@@ -95,12 +95,12 @@ pip install -r requirements.txt
 - #### CFG preparation
     * Modify the dataset information in data/coco.yaml.
 
-    * Modify cfg/training/yolov7-temporal.yaml, change nc as your dataset’s number of classes.
+    * Modify cfg/training/visof_net.yaml, change nc as your dataset’s number of classes.
 
 - #### Single GPU training 
     Our model only supports one-batch training now, you can start training as follows:
     ```github
-    python train.py --cfg cfg/training/yolov7-temporal.yaml --data data/yourDataset.yaml
+    python train.py --cfg cfg/training/visof_net.yaml --data data/yourDataset.yaml
     ```
 
 ### Test
